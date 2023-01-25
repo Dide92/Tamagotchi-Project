@@ -28,4 +28,17 @@ class Game {
             document.querySelector('#yummy').innerHTML = this.hungry
         },7000);
         }
+    playWithMe() {
+            let myInterval= setInterval(() => {
+                this.bored-=10
+                if (this.bored<=0) {
+                    clearInterval(myInterval)
+                    return gameOver()
+                } else if (this.bored < 1) {
+                    lert("I need attention! Play with me!!!!")
+                }
+                document.querySelector('#fun').innerHTML = this.bored
+            },7000)
+        }
+        
 }
