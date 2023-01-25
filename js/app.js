@@ -36,6 +36,33 @@ const baby2 = document.getElementById('baby2')
 const adult = document.getElementById('adult')
 const checkbox = document.getElementById('light')
 
+//--------------------------------------------------------------
+
+play.addEventListener('click', () => {
+    let petName=prompt("Please name your tamagotchi pet!")
+    play.remove()
+    box.remove()
+    myTamagotchi.remove()
+    eat.style.display='inline';
+    sleepB.style.display='inline';
+    bored.style.display='inline';
+    age.style.display='inline';
+    baby.style.display='inline';
+    // removeBaby()
+    // addBaby2()
+    // removeBaby2()
+    // addAdult()
+    Tamagotchi.ageUp()
+    Tamagotchi.sleepy()
+    Tamagotchi.playWithMe()
+    Tamagotchi.hunger()
+    increaseFun()
+    increaseHunger()
+    increaseSleep()
+    // gameOver()
+    
+})
+//--------------------------------------------------------------
 
 class Game {
     constructor(hungry, sleep, bored, age) {
