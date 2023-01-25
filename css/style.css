@@ -90,29 +90,37 @@ strong {
     display: none;
 }
 #baby {
-    display:none;
-    height:100px;
-    width: 100px;
+    visibility:hidden;
+    height:200px;
+    width: 200px;
     float:left;
     position:relative;
     top: 300px;
 }
 #baby2 {
-    display:none;
-    height:100px;
-    width: 100px;
+    visibility:hidden;
+    height:200px;
+    width: 200px;
     float:left;
     position:relative;
     top: 300px;
 }
 #adult {
     visibility: hidden;
-    height:100px;
-    width: 100px;
+    height:200px;
+    width: 200px;
     position:relative;
     float:left;
     top:300px; 
     
+}
+#angel {
+    visibility: hidden;
+    height:200px;
+    width: 200px;
+    position:relative;
+    float:left;
+    top:300px; 
 }
   .toggle {
     position: relative; 

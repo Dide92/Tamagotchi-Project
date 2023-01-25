@@ -8,6 +8,7 @@
 // let it morph after certain amount of time
 // show age and keep increasing
 
+// credits also goes to Tugce, Janine, Jeremy, Mateo and Michelle and many other online resouces including Udemy.com .
 // ***********************************************************************************
 //----------------------------------------------// 1st page animation
 
@@ -35,10 +36,11 @@ const baby =document.getElementById('baby')
 const baby2 = document.getElementById('baby2')
 const adult = document.getElementById('adult')
 const checkbox = document.getElementById('light')
+const angel = document.getElementById('angel')
+
 
 //--------------------------------------------------------------
-
-play.addEventListener('click', () => {
+function startGame() {
     let petName=prompt("Please name your tamagotchi pet!")
     play.remove()
     box.remove()
@@ -47,11 +49,6 @@ play.addEventListener('click', () => {
     sleepB.style.display='inline';
     bored.style.display='inline';
     age.style.display='inline';
-    baby.style.display='inline';
-    // removeBaby()
-    // addBaby2()
-    // removeBaby2()
-    // addAdult()
     Tamagotchi.ageUp()
     Tamagotchi.sleepy()
     Tamagotchi.playWithMe()
@@ -59,40 +56,16 @@ play.addEventListener('click', () => {
     increaseFun()
     increaseHunger()
     increaseSleep()
+    baby.style.visibility='visible'
+    baby2.style.visibility='visible'
+    adult.style.visibility='visible'
+    angel.style.visibility='visible'
     // gameOver()
-})
+}
+    play.addEventListener('click', startGame)
 
 //--------------------------------------------------------------
 
-function removeBaby () {
-    setInterval(() => {
-        baby.remove()
-    },10000)
-}
-console.log(removeBaby())
-
-function addBaby2() {
-    setInterval(() => {
-        baby2.style.display='inline'
-    },10000)
-}
-console.log(addBaby2())
-
-function removeBaby2 () {
-    setInterval(() => {
-        baby2.remove()
-    },30000)
-}
-console.log(removeBaby2())
-
-function addAdult() {
-    setInterval(() => {
-        adult.style.visibility='visible'
-    },30000)
-}
-console.log(addAdult())
-
-//--------------------------------------------------------------
 
 class Game {
     constructor(hungry, sleep, bored, age) {
@@ -104,10 +77,10 @@ class Game {
     hunger() {
         let interval = setInterval(() => {
             this.hungry-=10
-            if (this.hungry<=0){
+            if (this.hungry<=10){
                 clearInterval(interval)
                 return gameOver()
-            } else if (this.hungry < 1) {
+            } else if ((this.hungry<=20)&&(this.sleep>1)&&(this.bored>1)) {
                 alert("I need food!!!!")
             }
             document.querySelector('#yummy').innerHTML = this.hungry
@@ -116,11 +89,11 @@ class Game {
     playWithMe() {
             let myInterval= setInterval(() => {
                 this.bored-=10
-                if (this.bored<=0) {
+                if (this.bored<=10) {
                     clearInterval(myInterval)
                     return gameOver()
-                } else if (this.bored < 1) {
-                    lert("I need attention! Play with me!!!!")
+                } else if ((this.bored <=20) && (this.sleep>1) && (this.hungry>1)) {
+                    alert("I need attention! Play with me!!!!")
                 }
                 document.querySelector('#fun').innerHTML = this.bored
             },7000)
@@ -129,10 +102,10 @@ class Game {
             let intervalId= setInterval(() => {
                  this.sleep-=10
                  document.body.style.opacity=1
-                 if (this.sleep<=0) {
+                 if (this.sleep<=10) {
                      clearInterval(intervalId)
                      return gameOver()
-                 } else if (this.sleep <1) {
+                 } else if ((this.sleep <=20) && (this.hungry>1) && (this.bored>1)) {
                      alert("I need to sleep!!!!")
                  }
                  document.querySelector('#zzz').innerHTML = this.sleep
@@ -141,10 +114,22 @@ class Game {
     ageUp() {
             setInterval(() => {
             this.age++
+            if (this.age <= 2) {
+                baby.style.display='inline'
+            } else if (this.age === 3) {
+                baby.style.display='none'
+                baby2.style.display='inline'
+            } else if (this.age >= 6) {
+                baby2.style.display='none'
+                adult.style.display='inline'
+            } else if(this.hungry<=10 || this.sleep<=10 || this.bored<=10) {
+                adult.style.display='none'
+            }
             document.querySelector('.year').innerHTML = this.age
             }, 6000)
+            }
         }  
-    }
+
     const Tamagotchi = new Game ('My Tamagochi')
     
     Tamagotchi.ageUp()
@@ -197,11 +182,17 @@ function lightColor() {
 }
 
 function gameOver() {
-    alert('Your Tamagotchi is dead :(')
     adult.remove()
     eat.remove()
     sleepB.remove()
     bored.remove()
     age.remove()
     document.body.style.opacity=0.9
+    angel.style.display='inline'
 }
+
+setInterval(() => {
+    const y =  Math.floor(Math.random()* 1300)
+    const z =  Math.floor(Math.random()* -400)
+    angel.style.transform = `translate(${y}px, ${z}px)`;
+},2000)
