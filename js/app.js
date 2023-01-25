@@ -16,11 +16,11 @@ const myTamagotchi = document.createElement('img');
 myTamagotchi.src = "https://st4.depositphotos.com/3369547/30838/v/600/depositphotos_308381332-stock-illustration-tamagotchi-retro-device-with-color.jpg"
 myTamagotchi.style.borderRadius = "50%";
 myTamagotchi.style.width = '150px';
-myTamagotchi.style.float = 'left';
+myTamagotchi.style.float = 'top left';
 document.body.append(myTamagotchi);
 
 setInterval(() => {
-    const x = Math.floor(Math.random()* 1300)
+    const x = Math.floor(Math.random()* 500)
     const y = Math.floor(Math.random() * -400)
     myTamagotchi.style.transform = `translate(${x}px,${y}px)`;
 },1000)
@@ -37,11 +37,11 @@ const baby2 = document.getElementById('baby2')
 const adult = document.getElementById('adult')
 const checkbox = document.getElementById('light')
 const angel = document.getElementById('angel')
-
+const petName = document.getElementById('petName')
 
 //--------------------------------------------------------------
 function startGame() {
-    let petName=prompt("Please name your tamagotchi pet!")
+    hello()
     play.remove()
     box.remove()
     myTamagotchi.remove()
@@ -49,6 +49,7 @@ function startGame() {
     sleepB.style.display='inline';
     bored.style.display='inline';
     age.style.display='inline';
+    petName.style.display='inline'
     Tamagotchi.ageUp()
     Tamagotchi.sleepy()
     Tamagotchi.playWithMe()
@@ -64,6 +65,14 @@ function startGame() {
 }
     play.addEventListener('click', startGame)
 
+
+    function hello() {
+        let petNameAnswer=prompt("Please name your tamagotchi pet!")
+        petNameAnswer=petNameAnswer[0].toUpperCase() + petNameAnswer.substring(1)
+        if (petNameAnswer != null) {
+            document.querySelector('.helloName').innerText = petNameAnswer
+        }
+    }
 //--------------------------------------------------------------
 
 
@@ -77,10 +86,10 @@ class Game {
     hunger() {
         let interval = setInterval(() => {
             this.hungry-=10
-            if (this.hungry<=10){
+            if (this.hungry<=0){
                 clearInterval(interval)
                 return gameOver()
-            } else if ((this.hungry<=20)&&(this.sleep>1)&&(this.bored>1)) {
+            } else if ((this.hungry<=10)&&(this.sleep>1)&&(this.bored>1)) {
                 alert("I need food!!!!")
             }
             document.querySelector('#yummy').innerHTML = this.hungry
@@ -89,10 +98,10 @@ class Game {
     playWithMe() {
             let myInterval= setInterval(() => {
                 this.bored-=10
-                if (this.bored<=10) {
+                if (this.bored<=0) {
                     clearInterval(myInterval)
                     return gameOver()
-                } else if ((this.bored <=20) && (this.sleep>1) && (this.hungry>1)) {
+                } else if ((this.bored <=10) && (this.sleep>1) && (this.hungry>1)) {
                     alert("I need attention! Play with me!!!!")
                 }
                 document.querySelector('#fun').innerHTML = this.bored
@@ -102,10 +111,10 @@ class Game {
             let intervalId= setInterval(() => {
                  this.sleep-=10
                  document.body.style.opacity=1
-                 if (this.sleep<=10) {
+                 if (this.sleep<=0) {
                      clearInterval(intervalId)
                      return gameOver()
-                 } else if ((this.sleep <=20) && (this.hungry>1) && (this.bored>1)) {
+                 } else if ((this.sleep <=10) && (this.hungry>1) && (this.bored>1)) {
                      alert("I need to sleep!!!!")
                  }
                  document.querySelector('#zzz').innerHTML = this.sleep
@@ -192,7 +201,7 @@ function gameOver() {
 }
 
 setInterval(() => {
-    const y =  Math.floor(Math.random()* 1300)
-    const z =  Math.floor(Math.random()* -400)
+    const y =  Math.floor(Math.random()* 900)
+    const z =  Math.floor(Math.random()* -300)
     angel.style.transform = `translate(${y}px, ${z}px)`;
 },2000)
