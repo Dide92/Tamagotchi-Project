@@ -40,5 +40,17 @@ class Game {
                 document.querySelector('#fun').innerHTML = this.bored
             },7000)
         }
-        
+    sleepy() {
+            let intervalId= setInterval(() => {
+                 this.sleep-=10
+                 document.body.style.opacity=1
+                 if (this.sleep<=0) {
+                     clearInterval(intervalId)
+                     return gameOver()
+                 } else if (this.sleep <1) {
+                     alert("I need to sleep!!!!")
+                 }
+                 document.querySelector('#zzz').innerHTML = this.sleep
+             },7000)
+         }
 }
