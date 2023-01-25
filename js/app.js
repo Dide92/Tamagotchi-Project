@@ -103,6 +103,13 @@ bored.addEventListener('click', () => {
 increaseFun()
 })
 
+function lightColor() {
+    if(checkbox.checked != true) {
+        document.body.style.opacity=0.3
+    } else {
+        document.body.style.opacity=1
+    }
+}
 
 function gameOver() {
     alert('Your Tamagotchi is dead :(')
