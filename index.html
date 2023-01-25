@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Poiret+One&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Gloria+Hallelujah&family=Nanum+Pen+Script&family=Poiret+One&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Nanum+Pen+Script&family=Poiret+One&family=Rock+Salt&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/95a0dc60f6.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi Game</title>
+    <h1>Tamagotchi</h1>
+</head>
+<body>
+    <label class = "toggle">
+        <span class="onoff"><i class="fa-solid fa-lightbulb"></i></span>
+        <input type="checkbox" onclick="lightColor()" id="light" checked/>
+        <span class="slider round"></span>
+    </label>
+    <h3 id="ninties">Little flashback<br>
+        to '90s!</h3>
+<i class="fa-duotone fa-cloud-question"></i>
+        <div class="box">
+            <p><strong>How to Play:</strong> Please name your Tamagotchi to start.The point of the game is to keep your tamagotchi satisfied by preventing him/her from hunger, sleepiness and boredom levels reaching 0. Use the buttons on the screen to satify your tamagotchi as the alerts pop up. If you reach 0, you die and the game stops. If you manage to keep your tamagotchi satisfied long enough, you will see him/her morph! Good luck!</p>
+        </div>
+    <p id="age">AGE:<span class="year"></span></p>
+    <img id="baby" src="pictures/baby.png">
+    <img id="baby2" src="pictures/baby2.png">
+    <img id="adult" src="pictures/adult.png">
+    <button id="playButton"><img id="play" src="pictures/play.png"></button>
+    <button class="hide" id="eat">Feed me!<br><span id="yummy"></span></button>
+    <button class="hide" id="sleepButton">I'm sleepy!<br><span id="zzz"></span></button>
+    <button class="hide" id="bored">Play with me!<br><span id="fun"></span></button><br><br><br>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
