@@ -1,0 +1,137 @@
+
+  body {
+    background: url("https://images.template.net/115304/free-pastel-purple-ombre-background-o47uk.jpeg") no-repeat center center fixed; 
+    background-size: cover;
+    text-align: center;
+    margin:auto;
+    
+}
+
+h1 {
+    font-size: 100px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color:rgb(180, 108, 180);
+    margin: 0px;
+}
+#ninties {
+    transform: rotate(-35deg);
+    float:left;
+    margin:0 0 0 30px;
+    font-family: 'Nanum Pen Script', cursive;
+    display:block;
+
+}
+h3 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 40px;
+    color:purple;
+    margin:0;
+
+}
+#eat {
+    width: 220px;
+    height: 120px;
+    font-size: 25px;
+}
+#sleepButton{
+    width: 220px;
+    height: 120px;
+    font-size: 25px;
+}
+#bored {
+    width: 220px;
+    height: 120px;
+    font-size: 25px;
+}
+
+button {
+    margin: 10px 10px;
+    border-radius: 50%;
+    color: purple;
+    background-color: white;
+    font-family: 'Gloria Hallelujah', cursive;
+ 
+
+}
+.box{
+    font-family: 'Gloria Hallelujah', cursive;
+    width: 600px;
+    height: 180px;
+    font-size: 14px;
+    color: purple;
+    text-align: center;
+    position: relative;
+    margin: 60px auto;
+   
+    
+    }
+strong {
+    color: rgb(98, 4, 98);
+    font-size: 18px;
+    text-decoration:wavy;
+}
+#play {
+    height: 100px;
+    width: 100px;
+    cursor:pointer;
+    padding-top: 5px;
+}
+#age {
+    display:none;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 40px;
+    color:purple;
+    position:relative;
+    right:-300px;
+    top:300px;
+
+}
+.hide {
+    display: none;
+}
+#baby {
+    display:none;
+    height:100px;
+    width: 100px;
+    float:left;
+    position:relative;
+    top: 300px;
+}
+#baby2 {
+    display:none;
+    height:100px;
+    width: 100px;
+    float:left;
+    position:relative;
+    top: 300px;
+}
+#adult {
+    visibility: hidden;
+    height:100px;
+    width: 100px;
+    position:relative;
+    float:left;
+    top:300px; 
+    
+}
+  .toggle {
+    position: relative; 
+  }
+  .toggle input {
+    position:absolute;
+    opacity: 0;
+    width: 0;
+    height:0;
+  }
+  
+  .toggle .onoff {
+    font-size: 3em;
+    float: right;
+  }
+  i {
+    position: relative;
+    color:  purple;
+    cursor: pointer;
+    top: -100px;
+    right: 10px;
+}
