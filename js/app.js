@@ -102,3 +102,14 @@ increaseSleep()
 bored.addEventListener('click', () => {
 increaseFun()
 })
+
+
+function gameOver() {
+    alert('Your Tamagotchi is dead :(')
+    adult.remove()
+    eat.remove()
+    sleepB.remove()
+    bored.remove()
+    age.remove()
+    document.body.style.opacity=0.9
+}
