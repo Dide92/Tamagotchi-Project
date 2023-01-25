@@ -60,8 +60,38 @@ play.addEventListener('click', () => {
     increaseHunger()
     increaseSleep()
     // gameOver()
-    
 })
+
+//--------------------------------------------------------------
+
+function removeBaby () {
+    setInterval(() => {
+        baby.remove()
+    },10000)
+}
+console.log(removeBaby())
+
+function addBaby2() {
+    setInterval(() => {
+        baby2.style.display='inline'
+    },10000)
+}
+console.log(addBaby2())
+
+function removeBaby2 () {
+    setInterval(() => {
+        baby2.remove()
+    },30000)
+}
+console.log(removeBaby2())
+
+function addAdult() {
+    setInterval(() => {
+        adult.style.visibility='visible'
+    },30000)
+}
+console.log(addAdult())
+
 //--------------------------------------------------------------
 
 class Game {
