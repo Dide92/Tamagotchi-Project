@@ -9,6 +9,34 @@
 // show age and keep increasing
 
 // ***********************************************************************************
+//----------------------------------------------// 1st page animation
+
+const myTamagotchi = document.createElement('img');
+myTamagotchi.src = "https://st4.depositphotos.com/3369547/30838/v/600/depositphotos_308381332-stock-illustration-tamagotchi-retro-device-with-color.jpg"
+myTamagotchi.style.borderRadius = "50%";
+myTamagotchi.style.width = '150px';
+myTamagotchi.style.float = 'left';
+document.body.append(myTamagotchi);
+
+setInterval(() => {
+    const x = Math.floor(Math.random()* 1300)
+    const y = Math.floor(Math.random() * -400)
+    myTamagotchi.style.transform = `translate(${x}px,${y}px)`;
+},1000)
+
+//--------------------------------------------------------------
+const eat = document.querySelector('#eat')
+const sleepB = document.querySelector('#sleepButton')
+const bored = document.querySelector('#bored')
+const age = document.querySelector('#age')
+const box = document.querySelector('.box')
+const play = document.getElementById('playButton')
+const baby =document.getElementById('baby')
+const baby2 = document.getElementById('baby2')
+const adult = document.getElementById('adult')
+const checkbox = document.getElementById('light')
+
+
 class Game {
     constructor(hungry, sleep, bored, age) {
         this.hungry=100
