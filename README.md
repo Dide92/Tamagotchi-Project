@@ -10,4 +10,4 @@ The pictures are from
 Icons are from 
 1. "https://kit.fontawesome.com/95a0dc60f6.js"
 
-credits also goes to Tugce, Janine, Jeremy, Mateo and Michelle and many other online resouces including Udemy.com .
+
