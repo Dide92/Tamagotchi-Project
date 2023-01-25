@@ -53,4 +53,52 @@ class Game {
                  document.querySelector('#zzz').innerHTML = this.sleep
              },7000)
          }
-}
+    ageUp() {
+            setInterval(() => {
+            this.age++
+            document.querySelector('.year').innerHTML = this.age
+            }, 6000)
+        }  
+    }
+    const Tamagotchi = new Game ('My Tamagochi')
+    
+    Tamagotchi.ageUp()
+    Tamagotchi.sleepy()
+    Tamagotchi.playWithMe()
+    Tamagotchi.hunger()
+
+    function increaseHunger() {
+        if(Tamagotchi.hungry <=90) {
+            Tamagotchi.hungry+=10
+        }
+    document.querySelector('#yummy').innerHTML = Tamagotchi.hungry
+    } 
+    
+    function increaseSleep() {
+        if(Tamagotchi.sleep <=90) {
+            Tamagotchi.sleep+=10
+            document.body.style.opacity=0.3
+        }
+    document.querySelector('#zzz').innerHTML = Tamagotchi.sleep
+    }
+
+    function increaseFun() {
+        if(Tamagotchi.bored <=90) {
+            Tamagotchi.bored+=10
+        }
+    document.querySelector('#fun').innerHTML = Tamagotchi.bored
+    }
+
+
+eat.addEventListener('click', () => {
+increaseHunger()
+})
+
+sleepB.addEventListener('click', () => {
+increaseSleep()
+
+})
+    
+bored.addEventListener('click', () => {
+increaseFun()
+})
