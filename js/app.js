@@ -40,7 +40,7 @@ const angel = document.getElementById('angel')
 const petName = document.getElementById('petName')
 
 //--------------------------------------------------------------
-function startGame() {
+function startGame() { 
     hello()
     play.remove()
     box.remove()
@@ -63,7 +63,7 @@ function startGame() {
     angel.style.visibility='visible'
     // gameOver()
 }
-    play.addEventListener('click', startGame)
+play.addEventListener('click', startGame)
 
 
     function hello() {
@@ -92,7 +92,7 @@ class Game {
             } else if ((this.hungry<=10)&&(this.sleep>1)&&(this.bored>1)) {
                 alert("I need food!!!!")
             }
-            document.querySelector('#yummy').innerHTML = this.hungry
+            document.querySelector('#yummy').innerHTML = this.hungry+'%'
         },7000);
         }
     playWithMe() {
@@ -104,7 +104,7 @@ class Game {
                 } else if ((this.bored <=10) && (this.sleep>1) && (this.hungry>1)) {
                     alert("I need attention! Play with me!!!!")
                 }
-                document.querySelector('#fun').innerHTML = this.bored
+                document.querySelector('#fun').innerHTML = this.bored+'%'
             },7000)
         }
     sleepy() {
@@ -117,7 +117,7 @@ class Game {
                  } else if ((this.sleep <=10) && (this.hungry>1) && (this.bored>1)) {
                      alert("I need to sleep!!!!")
                  }
-                 document.querySelector('#zzz').innerHTML = this.sleep
+                 document.querySelector('#zzz').innerHTML = this.sleep+'%'
              },7000)
          }
     ageUp() {
@@ -141,10 +141,6 @@ class Game {
 
     const Tamagotchi = new Game ('My Tamagochi')
     
-    Tamagotchi.ageUp()
-    Tamagotchi.sleepy()
-    Tamagotchi.playWithMe()
-    Tamagotchi.hunger()
 
     function increaseHunger() {
         if(Tamagotchi.hungry <=90) {
